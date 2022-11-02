@@ -1,0 +1,41 @@
+# SYSCLK 200MHz
+set_property PACKAGE_PIN E19 [get_ports SYSCLK_P]
+set_property IOSTANDARD LVDS [get_ports SYSCLK_P]
+set_property PACKAGE_PIN E18 [get_ports SYSCLK_N]
+set_property IOSTANDARD LVDS [get_ports SYSCLK_N]
+
+# LEDs
+set_property PACKAGE_PIN AM39 [get_ports GPIO_LED_0_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_0_LS]
+set_property PACKAGE_PIN AN39 [get_ports GPIO_LED_1_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_1_LS]
+set_property PACKAGE_PIN AR37 [get_ports GPIO_LED_2_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_2_LS]
+set_property PACKAGE_PIN AT37 [get_ports GPIO_LED_3_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_3_LS]
+set_property PACKAGE_PIN AR35 [get_ports GPIO_LED_4_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_4_LS]
+set_property PACKAGE_PIN AP41 [get_ports GPIO_LED_5_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_5_LS]
+set_property PACKAGE_PIN AP42 [get_ports GPIO_LED_6_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_6_LS]
+set_property PACKAGE_PIN AU39 [get_ports GPIO_LED_7_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports GPIO_LED_7_LS]
+
+################################################################################
+# LCD Display (2x15 5x8 Dot display) (DisplayTech 162D) (ST7066U Driver)
+################################################################################
+set_property PACKAGE_PIN AT42 [get_ports LCD_DB4_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_DB4_LS]
+set_property PACKAGE_PIN AR38 [get_ports LCD_DB5_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_DB5_LS]
+set_property PACKAGE_PIN AR39 [get_ports LCD_DB6_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_DB6_LS]
+set_property PACKAGE_PIN AN40 [get_ports LCD_DB7_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_DB7_LS]
+set_property PACKAGE_PIN AN41 [get_ports LCD_RS_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_RS_LS]
+set_property PACKAGE_PIN AR42 [get_ports LCD_RW_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_RW_LS]
+set_property PACKAGE_PIN AT40 [get_ports LCD_E_LS]
+set_property IOSTANDARD LVCMOS18 [get_ports LCD_E_LS]
