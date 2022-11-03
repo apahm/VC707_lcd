@@ -7,7 +7,7 @@ module top_lcd(
     input wire clk_in_p,           
     input wire clk_in_n,
     // leds
-	output wire [7:0] leds,
+	output wire led,
 	// LCD data bus
 	output wire [3:0] lcd_data, 
 	// LCD: E   (control bit)	
@@ -32,8 +32,8 @@ wire mmcm_clkfb;
 
 IBUFGDS
 clk_200mhz_ibufgds_inst(
-    .I(clk_200mhz_p),
-    .IB(clk_200mhz_n),
+    .I(clk_in_p),
+    .IB(clk_in_n),
     .O(clk_200mhz_ibufg)
 );
 
@@ -45,7 +45,7 @@ clk_200mhz_ibufgds_inst(
 // Divide by 8 to get output frequency of 125 MHz
 MMCME2_BASE #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKOUT0_DIVIDE_F(8),
+    .CLKOUT0_DIVIDE_F(20),
     .CLKOUT0_DUTY_CYCLE(0.5),
     .CLKOUT0_PHASE(0),
     .CLKOUT1_DIVIDE(8),
@@ -109,6 +109,19 @@ sync_reset_inst (
     .rst(~mmcm_locked),
     .out(rst_int)
 );
+
+
+reg led_r;
+
+assign led = led_r;
+
+always @(posedge clk_int) begin : proc_led
+	if(rst_int) begin
+		led_r <= 0;
+	end else begin
+		led_r <= 1'b1;
+	end
+end
 
 lcd #(
 	.CYCLES_PER_US(50)

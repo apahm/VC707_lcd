@@ -1,4 +1,4 @@
-`timescale 10ns/10ps
+`timescale 1ns/1ps
 
 module tb_lcd();
 
@@ -11,9 +11,9 @@ module tb_lcd();
 		sys_clk = #(2.5) ~sys_clk;
 
 	initial begin
-		sys_rst = 1'b0;
+		sys_rst = 1'b1;
 	    #20000
-	    sys_rst = 1'b1;
+	    sys_rst = 1'b0;
 	end
 
 	top_lcd
@@ -25,7 +25,7 @@ module tb_lcd();
 	    .clk_in_p(sys_clk),           
 	    .clk_in_n(~sys_clk),
 	    // leds
-		.leds(),
+		.led(),
 		// LCD data bus
 		.lcd_data(), 
 		// LCD: E   (control bit)	
